@@ -8,6 +8,7 @@ body {
 
 header {
     padding: 0px 0px;
+    margin:0;
     background-color: #f8f8f8;
 }
 
@@ -344,7 +345,7 @@ header {
         text-align: justify;
 }
     .carousel {
-        padding: 0%;
+        padding: 0;
         width: 100%; /* Ocupa todo el ancho disponible */
         max-width: 100%; /* Ajusta el ancho máximo al 100% */
     }
@@ -355,7 +356,7 @@ header {
 
     .carousel-item img {
         width: 190%;
-        height: 100%; /* Ajusta el tamaño de las imágenes al tamaño del carrusel */
+        height: auto; /* Ajusta el tamaño de las imágenes al tamaño del carrusel */
         object-fit: cover;
     }
 
