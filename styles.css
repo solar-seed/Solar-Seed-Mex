@@ -1,9 +1,11 @@
-
+* {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+    box-sizing: border-box;
+}
 body {
     font-family: 'DM Sans', sans-serif;
-    overflow-x: hidden; /* Evita el desplazamiento horizontal */
-    padding: 0rem;
-    margin: 0rem;
 }
 
 header {
@@ -141,7 +143,7 @@ header {
     }
 
     .hero-text h1 {
-        font-size: 35px;
+        font-size: 30px;
         font-weight: bold;
         margin: 0;
     }
@@ -162,7 +164,7 @@ header {
 
 /* --------------section nosotros */
 .section-nosotros {
-    padding: 100px 60px;
+    padding: 100px 30px;
     text-align: justify;
     background-color: #fff;
     overflow: hidden;
@@ -275,7 +277,7 @@ header {
 }
 
 .section-trabajos {
-    padding: 50px 50px;
+    padding: 50px 30px;
     background-color: #fff;
     text-align: justify;
 }
@@ -292,28 +294,27 @@ header {
 .Trabajos-text p{
         font-size: 18px;
         line-height: 1.6;
-        padding-right: 80px;
         text-align: justify;
 }
 
 
-/* carrouseles */
+/* carrouseles
 .carousel-caption {
     position: absolute;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     background-color: rgba(255, 255, 255, 0.8); /* Fondo blanco tenue */
-    padding: 10px 5px;
+    /* padding: 10px 5px;
     border-radius: 5px;
     width: auto; /* Ajusta el ancho según sea necesario */
-}
+/* } */ 
 
 .carousel-caption h5,
 .carousel-caption p {
     color: #000; /* Cambia el color del texto si es necesario */
     margin: 0;
-}
+} */
 
 .carousel-container {
     display: flex;
@@ -358,69 +359,15 @@ header {
         height: 100%; /* Ajusta el tamaño de las imágenes al tamaño del carrusel */
         object-fit: cover;
     }
-
-    /* .carousel-caption {
-        bottom: 25px;
-        padding: 5px 10px;
-        background-color: rgba(255, 255, 255, 0.6); /* Ajusta la opacidad del fondo */
-        /* width: 90%; /* Ajusta el ancho del carousel-caption */
-        /* max-width: 300px; Limita el ancho máximo */
-        /* text-align: center; Centra el contenido */
-        /* left: 50%; */
-        /* transform: translateX(-50%); */ 
-    /* } */
 }
 
 /* ----------seccion-servicios */
-/* Animations */
-@keyframes slideInLeft {
-    from {
-      transform: translateX(-100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-
-  @keyframes slideInRight {
-    from {
-      transform: translateX(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
 
 
-  .servicio {
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-
-  .left-text {
-    transform: translateX(-100%);
-  }
-
-  .right-text {
-    transform: translateX(100%);
-  }
-
-
-  .in-view-left {
-    animation: slideInLeft 1s forwards;
-  }
-
-  .in-view-right {
-    animation: slideInRight 1s forwards;
-  }
-  /* ---Animations---- */
+/* ---Animations---- */
 /* ------- */
 .section-servicios {
-    padding: 50px 100px;
+    padding: 50px 30px;
     text-align: justify;
     background-color: #fff;
 }
@@ -429,6 +376,7 @@ header {
     flex: 1;
     margin-right: 20px;
     padding-bottom: 80px;
+    margin: 0;
 }
 
 .servicios-text h2 {
@@ -437,32 +385,16 @@ header {
     align-items: center;
     text-align: center;
 }
-.servicios-text p{
+
+.servicios-text p {
     font-size: 18px;
-    text-align:justify;
-}
-.servicios-text h2:hover{
-    color:#1589a5;
-}
-.text h2{
-    font-size: 18px;
-}
-.text p{
-    font-size: 16px;
+    text-align: justify;
 }
 
-/* para el panorama */
-#canvas{
-    width: 100%;
-    height:200px;
-    margin-bottom: 50px;
-    align-items: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    image-rendering: auto;
-
+.servicios-text h2:hover {
+    color: #1589a5;
 }
+
 .realizacion {
     display: inline-block;
     text-align: center;
@@ -474,29 +406,33 @@ header {
     transform-style: preserve-3d;
     margin: 0 auto; /* Añadir margen automático para centrar horizontalmente */
     display: block; /* Cambiar a bloque para que el margen automático funcione */
-  }
+}
 
-  .realizacion:hover {
+.realizacion:hover {
     color: #366dda;
     transform: scale3d(1.1, 1.1, 1.8);
-  }
+}
 
+/* --------seccion de imagenes y servicios-------------- */
+/* Estilos para las imágenes, el overlay y el texto */
+.servicio {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 40px;
+}
 
-  /* --------seccion de imagenes y servicios-------------- */
-
-  /* Estilos para las imágenes, el overlay y el texto */
 .servicio .image {
+    flex: 0 0 auto;
+    width: 50%;
     position: relative;
-    overflow: hidden;
-    width: 100%;
-    height: auto;
+    border-radius: 20px;
 }
 
 .servicio .image img {
-    display: block;
-    width: 100%;
+    width: 90%;
     height: auto;
-    transition: transform 0.3s ease;
+    border-radius: 20px;
 }
 
 .servicio .overlay {
@@ -505,140 +441,126 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(246, 248, 253, 0.807); /* Fondo azul */
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: 1.9em;
-    text-align: center;
-    transition: transform 0.9s ease;
-    transform: translateY(100%);
+    background-color: #ffffff83;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 20px;
 }
 
-.servicio .image:hover img {
-    transform: scale(1.1); /* Zoom in image */
+.servicio .overlay img {
+    max-width: 80%;
+    max-height: 80%;
 }
 
 .servicio .image:hover .overlay {
-    transform: translateY(0);
-}
-
-.servicio .text h4 {
-    transition: color 0.5s ease;
-    font-size: 18px;
-}
-
-  /* ----------------- */
-.section-servicios {
-    padding: 20px;
-}
-
-.container-servicios {
-    display: flex;
-    flex-direction: column;
-    padding: 70px 100px;
-    gap: 40px;
-}
-
-.servicio {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 40px;
+    opacity: 1;
 }
 
 
 .servicio .text {
-    flex: 1;
-    padding: 20px;
-    transition: transform 1.2s;
-    text-align: justify;
+    flex: 0 0 auto;
+    width: 50%;
+    padding: 0 20px;
 }
 
-.servicio:hover .text {
-    transform: translateY(-20px);
+.servicio .text h4 {
+    font-size: 24px;
+    margin: 0 0 10px;
 }
 
-.servicio .image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
+.servicio .text p {
+    font-size: 18px;
+    margin: 0 0 10px;
 }
 
-.servicio .image img {
-    width: 100%;
-    height: auto;
-    max-width: 400px;
-}
-.text h4{
-    font-size: 26px;
-}
-.text p{
-    font-size: 19px;
+.left-text .image {
+    order: 1;
 }
 
-
-.left-text {
-    flex-direction: row;
+.left-text .text {
+    order: 2;
 }
 
-.right-text {
-    flex-direction: row-reverse;
+.right-text .image {
+    order: 2;
 }
 
+.right-text .text {
+    order: 1;
+}
+
+.left-text, .right-text {
+    opacity: 0;
+    transform: translateX(-100px); /* Ajustar para left-text */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .right-text {
+    transform: translateX(100px); /* Ajustar para right-text */
+  }
+  
+  .in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  
+
+/* Estilos Responsivos */
 @media (max-width: 768px) {
-    .servicios-text h2:hover{
-        color:#1589a5;
-        margin: 0px;
-        padding: 0px;
-    }
     .servicio {
         flex-direction: column;
-        text-align: center;
+        align-items: stretch;
     }
 
-    .left-text,
-    .right-text {
-        flex-direction: column;
-    }
-
+    .servicio .text,
     .servicio .image {
+        width: 100%;
+    }
+
+    .left-text .image {
         order: 2;
-        display: block;
+    }
+
+    .left-text .text {
+        order: 1;
+    }
+
+    .right-text .image {
+        order: 2;
+    }
+
+    .right-text .text {
+        order: 1;
     }
 
     .servicio .image img {
-        position: static;
         width: 100%;
-        transform: translateY(100%);
-        transition: transform 0.9s;
+        height: auto;
     }
 
-    .servicio:hover .image img {
-        transform: translateY(0);
+    .servicio .overlay {
+        width: 100%;
+        height: 100%;
     }
-    .realizacion{
-        display: inline-block;
-        text-align: center;
-        font-size: 23px;
-        color: #274081;
-        position: relative;
-        text-decoration: none;
-        transition: color 0.9s ease, transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        transform-style: preserve-3d;
-        margin: 0 auto; /* Añadir margen automático para centrar horizontalmente */
-        display: block; /* Cambiar a bloque para que el margen automático funcione */
-    }
-    .text h4{
-        font-size: 18px;
-    }
-    .text p{
+
+    .realizacion {
         font-size: 16px;
     }
+    .servicio .text h4 {
+        font-size: 20px;
+        margin: 0 0 10px;
+    }
+    
+    .servicio .text p {
+        font-size: 16px;
+        margin: 0 0 10px;
+    }
 }
+
+
 
 /* ------------------------contacto */
 .section-contacto {
@@ -828,7 +750,7 @@ header {
     font-size: 20px;
     display: inline-block ;
     text-decoration: none;
-    margin: 5px 1px;
+    margin: 5px 10px;
     opacity: 0.75;
     transition: 0.3s;
 
